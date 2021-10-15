@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 clap = "2.33.3"
+simple_logger = "1.13.0"
+log = "0.4.14"

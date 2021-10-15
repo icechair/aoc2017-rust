@@ -1,5 +1,6 @@
 use super::Solution;
 pub struct Solver {}
+use log::info;
 
 fn line_difference(line: &str) -> i32 {
   let mut min = i32::MAX;
@@ -14,7 +15,7 @@ fn line_difference(line: &str) -> i32 {
       }
     }
   }
-  println!(
+  info!(
     "day2::line_difference(): line: {}, min: {}, max: {}",
     line, min, max
   );
@@ -31,7 +32,7 @@ fn line_division(line: &str) -> i32 {
   let mut div = 0;
   for (idx, a) in numbers.iter().enumerate() {
     for b in numbers.iter().skip(idx + 1) {
-      println!(
+      info!(
         "day2::line_division(): a = {}, b = {}, a % b = {}, a / b = {}",
         a,
         b,
@@ -43,7 +44,7 @@ fn line_division(line: &str) -> i32 {
       }
     }
   }
-  println!(
+  info!(
     "day2::line_division(): numbers: {:?}, div = {}",
     numbers, div
   );
@@ -51,7 +52,7 @@ fn line_division(line: &str) -> i32 {
 }
 
 impl Solution for Solver {
-  fn part1(&self, input: &str) -> String {
+  fn part1(&mut self, input: &str) -> String {
     let trimmed = input.trim();
     let mut sum = 0;
     for line in trimmed.lines() {
@@ -60,7 +61,7 @@ impl Solution for Solver {
     return format!("{0}", sum);
   }
 
-  fn part2(&self, input: &str) -> String {
+  fn part2(&mut self, input: &str) -> String {
     let trimmed = input.trim();
     let mut sum = 0;
     for line in trimmed.lines() {
