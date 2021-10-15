@@ -1,5 +1,6 @@
 mod day1;
 mod day2;
+mod day3;
 
 trait Solution {
   fn part1(&self, input: &str) -> String;
@@ -23,6 +24,7 @@ impl Solver {
     let mut solutions: Vec<Box<dyn Solution>> = Vec::new();
     solutions.push(Box::new(day1::Solver {}));
     solutions.push(Box::new(day2::Solver {}));
+    solutions.push(Box::new(day3::Solver {}));
     return Self { solutions };
   }
 
