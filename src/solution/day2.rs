@@ -2,11 +2,11 @@ use super::Solution;
 pub struct Solver {}
 use log::info;
 
-fn line_difference(line: &str) -> i32 {
-  let mut min = i32::MAX;
+fn line_difference(line: &str) -> i64 {
+  let mut min = i64::MAX;
   let mut max = 0;
   for num in line.split_whitespace() {
-    if let Ok(n) = num.parse::<i32>() {
+    if let Ok(n) = num.parse::<i64>() {
       if min > n {
         min = n;
       }
@@ -22,10 +22,10 @@ fn line_difference(line: &str) -> i32 {
   return max - min;
 }
 
-fn line_division(line: &str) -> i32 {
+fn line_division(line: &str) -> i64 {
   let mut numbers: Vec<_> = line
     .split_whitespace()
-    .map(|num| num.parse::<i32>().unwrap())
+    .map(|num| num.parse::<i64>().unwrap())
     .collect();
   numbers.sort();
   numbers.reverse();
